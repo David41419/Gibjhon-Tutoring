@@ -1,0 +1,84 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D</title>
+    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+
+
+<body>
+
+    
+<form action="" method="POST">
+    <div id="welcome"><h1>Student Log in page </h1></div>
+    <div class="input-field">
+    <label class="input-label">Enter First name</label><br>
+    <input type="text" class="input-box" name="fname" required><br>
+    </div>
+
+    <div class="input-field">
+    <label class="input-label">Enter Last name</label><br>
+    <input type="text" class="input-box" name="lname" required><br>
+    </div>
+
+    <div class="input-field">  
+    <label class="input-label">Email Adress  </label><br>
+    <input type="text" class="input-box" name="lname" required><br>
+    </div>
+
+    <div class="input-field">  
+    <label class="input-label">Password  </label><br>
+    <input type="text" id="input-box" name="lname" required><br>
+    </div>
+
+
+
+    <div class="input-field">
+      <button>
+        <a href="das.html">Log in </a>
+      </button>
+    <span id="error" style="color: red;"></span> 
+
+    </div>
+
+<div class="input-field"><p>Dont have an account : <a href="sign-up.html">Sign Up </a></p></div>
+</form>
+
+
+ <script>
+//type of conditions you want your password to fuffill
+  var passwordRegex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
+  
+//gets user input from id from the form above
+  const form = document.getElementById( 'welcome');
+  const passwordField = document.getElementById('input-box');
+  const errorMsg = document.getElementById('error');
+
+  form.addEventListener('submit', function(e) {
+    const password = passwordField.value;
+
+// the if statement to validat user iput if it matches the regex value it displays a pop up alert message sayin passowd has been accepted and if not showa the condition the passowrd must meet before it could be accepted 
+    if (!passwordRegex.test(password)) {
+      e.preventDefault(); // Stop form from submitting
+      errorMsg.style.display = 'block';
+      errorMsg.textContent = 'Password must be 8+ chars, with upper, lower, number & special character.';
+    }
+    else{
+        alert("Password Has Been Accepted");
+    }
+  });
+</script>
+
+</body>
+</html>
+
+
+
+
+
